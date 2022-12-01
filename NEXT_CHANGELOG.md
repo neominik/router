@@ -246,6 +246,30 @@ Adding the `-r` flag recently broke the existing functionality to build from the
 
 By [@garypen](https://github.com/garypen) in https://github.com/apollographql/router/pull/2163
 
+### Return root `__typename` when parts of a query with deferred fragment ([Issue #1677](https://github.com/apollographql/router/issues/1677))
+
+With this query:
+
+```graphql
+{
+  __typename
+  fast
+  ...deferedFragment @defer
+}
+
+fragment deferedFragment on Query {
+  slow
+}
+```
+
+You will received first response chunk:
+
+```json
+{"data":{"__typename": "Query", "fast":0},"hasNext":true}
+```
+
+By [@bnjjj](https://github.com/bnjjj) in https://github.com/apollographql/router/pull/2188
+
 ### Improve errors when subgraph returns non-GraphQL response with a non-2xx status code ([Issue #2117](https://github.com/apollographql/router/issues/2117))
 
 The error response will now contain the status code and status name. Example: `HTTP fetch failed from 'my-service': 401 Unauthorized`
