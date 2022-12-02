@@ -240,6 +240,12 @@ By [@Geal](https://github.com/Geal) in https://github.com/apollographql/router/p
 
 ## 🐛 Fixes
 
+### Fix panic when dev mode enabled with empty config file ([Issue #2182](https://github.com/apollographql/router/issues/2182))
+
+If you're running the Router with dev mode with an empty config file, it will no longer panic
+
+By [@bnjjj](https://github.com/bnjjj) in https://github.com/apollographql/router/pull/2165
+
 ### fix build_docker_image.sh script when using default repo ([PR #2163](https://github.com/apollographql/router/pull/2163))
 
 Adding the `-r` flag recently broke the existing functionality to build from the default repo using `-b`. This fixes that.
@@ -309,7 +315,7 @@ By [@goto-bus-stop](https://github.com/goto-bus-stop) in https://github.com/apol
 
 The docs CORS regex example now displays a working and safe way to allow `HTTPS` subdomains of `api.example.com`.
 
-By [@col](https://github.com/o0Ignition0o) in https://github.com/apollographql/router/pull/2152
+By [@o0Ignition0o](https://github.com/o0Ignition0o) in https://github.com/apollographql/router/pull/2152
 
 
 ### update documentation to reflect new examples structure ([Issue #2095](https://github.com/apollographql/router/issues/2095))
@@ -318,3 +324,11 @@ We recently updated the examples directory structure. This fixes the documentati
 
 By [@garypen](https://github.com/garypen) in https://github.com/apollographql/router/pull/2133
 
+
+### Docs: Add a disclaimer for users who set up health-checks and prometheus endpoints in a containers environment ([Issue #2079](https://github.com/apollographql/router/issues/2079))
+
+The health check and the prometheus endpoint listen to 127.0.0.1 by default.
+While this is a safe default, it prevents other pods from performing healthchecks and scraping prometheus data.
+This behavior and customization is now documented in the [health-checks](https://www.apollographql.com/docs/router/configuration/health-checks) and the [prometheus](https://www.apollographql.com/docs/router/configuration/metrics#using-prometheus) sections.
+
+By [@o0Ignition0o](https://github.com/o0Ignition0o) in https://github.com/apollographql/router/pull/2194
