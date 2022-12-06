@@ -34,6 +34,12 @@ in a previous payload.
 
 By [@Geal](https://github.com/geal) in https://github.com/apollographql/router/pull/2184
 
+### Dispatch errors from the primary response to deferred responses ([Issue #1818](https://github.com/apollographql/router/issues/1818), [Issue #2185](https://github.com/apollographql/router/issues/2185))
+
+When errors are generated during the primary execution, some of them can be affected to
+deferred responses.
+
+By [@Geal](https://github.com/geal) in https://github.com/apollographql/router/pull/2192
 
 ## 🛠 Maintenance
 
