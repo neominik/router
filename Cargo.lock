@@ -109,8 +109,6 @@ checksum = "216261ddc8289130e551ddcd5ce8a064710c0d064a4d2895c67151c92b5443f6"
 [[package]]
 name = "apollo-compiler"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c4e8b67b10b590ac58e555af24b7cc7863deacb4c7bc6ae2efd60b0256a2b654"
 dependencies = [
  "apollo-parser 0.4.0",
  "miette 4.7.1",
@@ -137,7 +135,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "555c85cfb5672ee5d5925db34c15b8bc53e97bf5c67eb0a75d54ee9fe51ec8f0"
 dependencies = [
- "apollo-parser 0.4.0",
+ "apollo-parser 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "thiserror",
 ]
 
@@ -148,6 +146,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d640c8fb7f9ab98a78a8086bb413d8ecf3ee44849976e1636e27265f09e9e544"
 dependencies = [
  "rowan",
+]
+
+[[package]]
+name = "apollo-parser"
+version = "0.4.0"
+dependencies = [
+ "rowan",
+ "thiserror",
 ]
 
 [[package]]
@@ -167,7 +173,8 @@ dependencies = [
  "access-json",
  "ansi_term",
  "anyhow",
- "apollo-parser 0.4.0",
+ "apollo-compiler",
+ "apollo-parser 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "askama",
  "async-compression",
  "async-trait",
@@ -245,6 +252,7 @@ dependencies = [
  "serde_yaml",
  "sha2",
  "shellexpand",
+ "similar-asserts",
  "static_assertions",
  "sys-info",
  "tempfile",
@@ -311,7 +319,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e9c717390e188a27cbbe09c76042332bf6cc3bb6a83a73d71c0bceb6f2d73cb9"
 dependencies = [
  "apollo-encoder 0.4.0",
- "apollo-parser 0.4.0",
+ "apollo-parser 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "arbitrary",
  "once_cell",
  "thiserror",
@@ -4064,7 +4072,7 @@ dependencies = [
 name = "router-fuzz"
 version = "0.0.0"
 dependencies = [
- "apollo-parser 0.4.0",
+ "apollo-parser 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "apollo-smith",
  "env_logger",
  "libfuzzer-sys",
@@ -4550,6 +4558,20 @@ name = "similar"
 version = "2.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "62ac7f900db32bf3fd12e0117dd3dc4da74bc52ebaac97f39668446d89694803"
+dependencies = [
+ "bstr",
+ "unicode-segmentation",
+]
+
+[[package]]
+name = "similar-asserts"
+version = "1.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bbf644ad016b75129f01a34a355dcb8d66a5bc803e417c7a77cc5d5ee9fa0f18"
+dependencies = [
+ "console 0.15.2",
+ "similar",
+]
 
 [[package]]
 name = "slab"
@@ -4715,7 +4737,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "apollo-compiler",
- "apollo-parser 0.4.0",
+ "apollo-parser 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "apollo-router",
  "async-trait",
  "futures",
