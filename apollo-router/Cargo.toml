@@ -137,8 +137,8 @@ opentelemetry-prometheus = "0.11.0"
 paste = "1.0.9"
 pin-project-lite = "0.2.9"
 prometheus = "0.13"
-prost = "0.11.0"
-prost-types = "0.11.0"
+prost = "0.11.3"
+prost-types = "0.11.2"
 proteus = "0.5.0"
 rand = "0.8.5"
 rhai = { version = "1.11.0", features = ["sync", "serde", "internals"] }
@@ -166,7 +166,7 @@ thiserror = "1.0.37"
 tokio = { version = "1.23.0", features = ["full"] }
 tokio-stream = { version = "0.1.11", features = ["sync", "net"] }
 tokio-util = { version = "0.7.4", features = ["net", "codec"] }
-tonic = { version = "0.8.2", features = ["transport", "tls", "tls-roots"] }
+tonic = { version = "0.8.3", features = ["transport", "tls", "tls-roots"] }
 tower = { version = "0.4.13", features = ["full"] }
 tower-http = { version = "0.3.5", features = [
     "trace",
@@ -225,7 +225,7 @@ tracing-test = "0.2.2"
 walkdir = "2.3.2"
 
 [build-dependencies]
-tonic-build = "0.8.2"
+tonic-build = "0.8.4"
 
 
 [[test]]
